@@ -1,5 +1,5 @@
 # Geckos-Team-12
-Add-project-description-here | Chingu Voyage-6 | https://chingu.io/
+Quora clone app : Our mission is to share and grow the world’s knowledge. A vast amount of the knowledge that would be valuable to many people is currently only available to a few — either locked in people’s heads, or only accessible to select groups
 
 
 # Stack
