@@ -32,14 +32,14 @@ const NavBar = () =>{
               <NavItem>
                 <NavLink href="/">Notifications</NavLink>
               </NavItem>
-              <NavItem>
-                <NavLink href="/">Add Question</NavLink>
+              <NavItem className="search">
+                <Input type="search" name="search" id="" placeholder="search Quora" />
               </NavItem>
               <NavItem>
                 <NavLink href="/">Profile</NavLink>
               </NavItem>
-              <NavItem className="search">
-                <Input type="search" name="search" id="" placeholder="search Quora" />
+              <NavItem>
+                <NavLink href="/">Add Question</NavLink>
               </NavItem>
             </Nav>
           </Collapse>
