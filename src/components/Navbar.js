@@ -53,10 +53,10 @@ class NavBar extends React.Component {
               </NavbarNav>
               <NavbarNav right className="nav-items">
                 <NavItem>
-                  <NavLink to="/"><ion-icon className="person" name="person"></ion-icon></NavLink>
+                  <NavLink to="/"><ion-icon size="large" name="person"></ion-icon></NavLink>
                 </NavItem>
                 <NavItem>
-                <NavLink to="/"><Button color="danger" size="md">Add Question</Button></NavLink>
+                <NavLink to="/" className="button">Add Question</NavLink>
                 </NavItem>
               </NavbarNav>
             </Collapse>

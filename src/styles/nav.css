@@ -17,7 +17,16 @@
     font-size: 18px;
 }
 
+.button {
+    border: 1px solid gainsboro;
+    text-align: center;
+}
+
 ion-icon {
+    padding-right: 10px;
+}
+
+/* ion-icon {
     font-size: 30px;
     color: white;
     background-color: #d9534f;
@@ -25,4 +34,4 @@ ion-icon {
     border-radius: 50%;
     padding: 5px;
     margin-top: 5px;
-}
+} */
