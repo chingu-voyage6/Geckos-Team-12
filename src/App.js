@@ -2,7 +2,6 @@
  * This is the entry file for app
  */
 import React, { Component } from 'react';
-import './App.css';
 import Main from './components/Main';
 import _Navbar from "./components/Navbar";
 import Sidebar from './components/Sidebar';
