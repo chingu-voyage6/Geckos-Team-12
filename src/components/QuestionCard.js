@@ -16,6 +16,7 @@ class QuestionCard extends React.Component {
             more: true
         }));
     }
+    const truncatedAnswer = 
     render() {
         return (
             <div>
