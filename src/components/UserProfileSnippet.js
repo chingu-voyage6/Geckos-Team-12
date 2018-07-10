@@ -1,15 +1,13 @@
 import React from 'react';
 
 const UserProfileSnippet = () => (
-    <div>
-        <div className="wrapper">
-            <div className="user-profile-image">
-                <p>User profile image</p>
-            </div>
-            <div className="user-profile-bio">
-                <p>Name, Brief Bio<br />
-                Answered X hrs ago</p>
-            </div>
+    <div className="wrapper user-profile-snippet">
+        <div className="user-profile-image">
+            <img src="/images/placeholder_userprofileimage.png" />
+        </div>
+        <div className="user-profile-bio">
+            <p>John Smith, Chief dummytext officer<br />
+            Answered 0 hrs ago</p>
         </div>
     </div>
 );

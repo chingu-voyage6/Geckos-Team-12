@@ -16,12 +16,25 @@ class QuestionCard extends React.Component {
             more: true
         }));
     }
+    truncatedAnswer = this.props.answerText.split(" ").slice(0,100).join(" ");
+
     render() {
         return (
             <div>
                 <h2>{this.props.question}</h2>
                 <UserProfileSnippet />
-                <p>Answer truncated to 100 words then... (<a onClick={this.handleMoreToggle}>more</a>)</p>
+
+                { this.truncatedAnswer === this.props.answerText && this.handleMoreToggle() }
+
+                {
+                    this.state.more
+                        ?
+                    <p>{this.props.answerText}</p>
+                        :
+                    <p>{ this.truncatedAnswer }... <a onClick={this.handleMoreToggle}>(read more)</a></p>
+                }
+
+
                 { this.state.more && <AnswerActionsWidget />}
                 { this.state.more && <CommentsWidget />}
             </div>
