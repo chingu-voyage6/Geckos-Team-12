@@ -7,9 +7,16 @@ const sampleQuestionCards = [
     {
         id: 1,
         question: "Sample question 1?",
-        answerUserId: 428,
-        answerDate: 0,
+        answerUserId: 2,
+        answerDate: "2018-07-01",
         answerText: "This is a long string of text. This is a long string of text. This is a long string of text. This is a long string of text. This is a long string of text. This is a long string of text. This is a long string of text. This is a long string of text. This is a long string of text. This is a long string of text. This is a long string of text. This is a long string of text. This is a long string of text. This is a long string of text. This is a long string of text. This is a long string of text. This is a long string of text. This is a long string of text. This is a long string of text. This is a long string of text. This is a long string of text. This is a long string of text. "
+    },
+    {
+        id: 2,
+        question: "Sample question 2?",
+        answerUserId: 1,
+        answerDate: "2018-07-05",
+        answerText: "This is a longer string of text. This is a long string of text. This is a long string of text. This is a long string of text. This is a long string of text. This is a long string of text. This is a long string of text. This is a long string of text. This is a long string of text. This is a long string of text. This is a long string of text. This is a long string of text. This is a long string of text. This is a long string of text. This is a long string of text. This is a long string of text. This is a long string of text. This is a long string of text. This is a long string of text. This is a long string of text. This is a long string of text. This is a long string of text. "
     }
 ]
 
@@ -20,7 +27,7 @@ const Main = () => (
         </div>
         {sampleQuestionCards.length === 0
         ?
-        ( <p>No answers available</p> )
+        ( <p>Your feed is empty. Ask a question!</p> )
         :
         (
             sampleQuestionCards.map((answer) => (

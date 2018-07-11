@@ -21,6 +21,10 @@ body {
 .sidebar-container {
     width: 20%;
 }
+
+.space-between {
+    justify-content: space-between;
+}
   
 .wrapper {
     display: flex;
