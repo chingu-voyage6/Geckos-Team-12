@@ -5,6 +5,7 @@
 .nav-brand {
     font-weight: bolder;
     font-size: 25px;
+    position: relative;
 }
 
 .nav-items {
@@ -15,6 +16,17 @@
 .form-control {
     width: 350px;
     font-size: 18px;
+}
+
+.searchBox{
+    width: 250;
+    margin: auto;
+
+}
+.searchStyle{
+    position: absolute;
+    width: 350px;
+    border: 1px solid lightgray;
 }
 
 .button {

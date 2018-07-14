@@ -48,7 +48,7 @@ class NavBar extends React.Component {
                   <NavLink to="/">Notifications</NavLink>
                 </NavItem>
                 <NavItem>
-                  <Search />
+                <Search />
                 </NavItem>
               </NavbarNav>
               <NavbarNav right className="nav-items">

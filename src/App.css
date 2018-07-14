@@ -29,8 +29,10 @@
 
 .card {
   border: 1px solid black;
+  
 }
 
 .wrapper {
+  position: relative;
   display: flex;
 }
