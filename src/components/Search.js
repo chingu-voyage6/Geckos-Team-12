@@ -33,14 +33,18 @@ const Search = () => {
                         <input
                             {...getInputProps({
                                 isOpen,
-                                placeholder: 'Type a'
+                                placeholder: 'Type a or e for testing'
                             })}
                             className="form-control"
                         />
 
                         {isOpen ? (
                             <div className="searchStyle">
-                                {items.filter(item => !inputValue || item.value.includes(inputValue))
+                                {items.filter(
+                                    item =>
+                                        !inputValue ||
+                                        item.value.toLowerCase().includes(inputValue.toLowerCase())
+                                )
                                 .map((item,index)=>(
                                     
                                     <DropdownItem
