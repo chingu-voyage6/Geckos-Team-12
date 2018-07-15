@@ -14,7 +14,7 @@ const sampleQuestionCards = [
 ]
 
 const Main = () => (
-    <div>
+    <div className="main-wrapper">
         <div className="card">
             <AskQuestionPrompt />
         </div>

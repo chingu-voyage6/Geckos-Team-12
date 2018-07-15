@@ -12,6 +12,16 @@ class App extends Component {
       <div>
         <_Navbar/>
         
+        <div className="wrapper">
+          <div className="sidebar-container">
+            <Sidebar />
+          </div>
+          <div className="main-container">
+            <Main />
+          </div>
+          <div className="sidebar-container">
+          </div>
+        </div>
       </div>
     );
   }
