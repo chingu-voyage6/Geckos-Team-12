@@ -1,15 +1,38 @@
 import React from 'react';
+import { Button } from 'mdbreact';
 
-const CommentWidget = () => (
+import CommentIndividual from './CommentIndividual';
+
+const placeholderOnSubmit = (e) => {
+    e.preventDefault();
+    e.target.elements.addcomment.value = '';
+    alert('You submitted a comment!');
+}
+
+const CommentsWidget = ({ answerId }) => (
     <div>
-        <div>
-        [YourUserProfilePic] <input type="text" placeholder="Add a comment" />
+        <div className="card">
+        [YourUserProfilePic]
+            <form onSubmit={placeholderOnSubmit}>
+                <input type="text" name="addcomment" placeholder="Add a comment" />
+                <Button color="primary" type="submit">Comment</Button>
+            </form>
         </div>
         <div>
-        [CommenterUserProfilePic] Jon Smith / X hrs ago<br />
-        Text of comment truncated to 100 words... (more)
+            {1 === 0
+                ?
+                ( <p>No comments on this answer. Add one!</p> )
+                :
+                (
+                    <div className="card">
+                    <CommentIndividual 
+
+                    />
+                    </div>
+                )
+            }
         </div>
     </div>
 );
 
-export default CommentWidget;
+export default CommentsWidget;
