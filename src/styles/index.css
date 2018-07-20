@@ -15,7 +15,17 @@ body {
     font-size: 1.5em;
 }
 
+.question-page-container {
+    display: flex;
+    padding: 20px 0;
+}
+
+.question-display {
+    padding: 20px 0;
+}
+
 .main-container {
+    padding: 0 20px;
     width: 60%;
 }
 
