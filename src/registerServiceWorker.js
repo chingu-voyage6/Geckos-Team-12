@@ -48,6 +48,8 @@ export default function register() {
         // Is not local host. Just register service worker
         registerValidSW(swUrl);
       }
+
+      
     });
   }
 }
