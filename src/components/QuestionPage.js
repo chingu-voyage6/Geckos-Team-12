@@ -1,7 +1,9 @@
 import React from 'react';
 
-import AskQuestionModal from './AskQuestionModal';
-import QuestionCard from './QuestionCard'; 
+import AnswerCard from './AnswerCard';
+import QuestionActionsWidget from './QuestionActionsWidget';
+
+// { match.params.questionId }
 
 const sampleQuestionCards = [
     {
@@ -22,27 +24,26 @@ const sampleQuestionCards = [
     }
 ]
 
-const Main = () => (
-    <div className="main-wrapper">
-        <div className="card">
-            <AskQuestionModal />
-        </div>
-        {sampleQuestionCards.length === 0
-        ?
-        ( <p>Your feed is empty. Ask a question!</p> )
-        :
-        (
-            sampleQuestionCards.map((answer) => (
-                <div className="card">
-                <QuestionCard 
-                    key={answer.answerId}
-                    {...answer}
-                />
-                </div>
-            ))
-        )
-        }
-    </div>
-);
 
-export default Main;
+const QuestionPage = ({ match }) => (
+    <div class="question-page-container">
+        <div class="main-container card">
+            <div class="question-display">
+                <h3>This is a sample question?</h3>
+                <QuestionActionsWidget />
+            </div>
+
+            <h3>X Answers</h3>
+
+            <AnswerCard
+                more={true}
+                { ...sampleQuestionCards[0] }
+            />
+        </div>
+        <div>
+            List of other questions goes here
+        </div>
+    </div>
+)
+
+export default QuestionPage;

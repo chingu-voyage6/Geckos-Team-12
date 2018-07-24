@@ -1,10 +1,12 @@
 import React from 'react';
 import FontAwesome from 'react-fontawesome';
 
-const AnswerActionsWidget = ({ answerId }) => (
-    <div class="wrapper space-between larger-text">
+import AnswerQuestionModal from './AnswerQuestionModal';
+
+const QuestionActionsWidget = ({ answerId }) => (
+    <div class="wrapper space-between">
         <div>
-            <FontAwesome name='arrow-circle-up' /> Upvote | <FontAwesome name='arrow-circle-down' /> Downvote
+            <AnswerQuestionModal />
         </div>
         <div>
         <FontAwesome name='facebook' /> | <FontAwesome name='twitter' /> | <FontAwesome name='link' /> 
@@ -12,4 +14,4 @@ const AnswerActionsWidget = ({ answerId }) => (
     </div>
 );
 
-export default AnswerActionsWidget;
+export default QuestionActionsWidget;
