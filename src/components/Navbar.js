@@ -53,10 +53,7 @@ class NavBar extends React.Component {
               </NavbarNav>
               <NavbarNav right className="nav-items">
                 <NavItem>
-                  <NavLink to="/"><ion-icon size="large" name="person"></ion-icon></NavLink>
-                </NavItem>
-                <NavItem>
-                <NavLink to="/" className="button">Add Question</NavLink>
+                  <NavLink to="/login">Log In</NavLink>
                 </NavItem>
               </NavbarNav>
             </Collapse>
@@ -67,5 +64,4 @@ class NavBar extends React.Component {
 }
 
 export default NavBar;
-
 

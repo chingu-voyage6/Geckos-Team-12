@@ -1,12 +1,23 @@
 import React from 'react';
 import Downshift from 'downshift';
-import { Dropdown, DropdownMenu, DropdownItem} from 'mdbreact';
+import { DropdownItem} from 'mdbreact';
 import '../styles/nav.css';
 
 const items = [
     { value: 'apple' },
     { value: 'pear' },
     { value: 'orange' },
+    { value: 'grape' },
+    { value: 'papaya' },
+    { value: 'Avocado' },
+    { value: 'Durian' },
+    { value: 'Grapefruit'},
+    { value: 'Lemon'},
+    { value: 'Pear'},
+    { value: 'Star Apple'},
+    { value: 'Strawberry'},
+    { value: 'plum'},
+    { value: 'peach'},
     { value: 'grape' },
     { value: 'banana' },
 ]
@@ -33,7 +44,7 @@ const Search = () => {
                         <input
                             {...getInputProps({
                                 isOpen,
-                                placeholder: 'Type a or e for testing'
+                                placeholder: 'Quora Search'
                             })}
                             className="form-control"
                         />
