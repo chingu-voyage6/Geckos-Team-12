@@ -31,6 +31,13 @@ app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
+
+
+  app.use(express.static(path.resolve(__dirname,'../build')));
+  app.get("*", (req, res) => {
+    res.sendFile(path.resolve(__dirname,'../build','index.html'));
+  });
+
 //app.use(express.static(path.join(__dirname, '../build')));
 
 //Using all routes defined
