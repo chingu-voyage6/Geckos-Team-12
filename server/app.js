@@ -9,7 +9,7 @@ const passportSetup = require('./config/passport-setup');
 /*****************DB Connection********************** */
 const mongoose = require('mongoose');
 const keys = require('./config/keys');
-const mongoURI  = keys.mongodb.dbURI;
+var mongoURI  = keys.mongodb.dbURI;
 if(process.env.NODE_ENV === 'production'){
   mongoURI = process.env.MONGODB_URI;
 }
