@@ -19,16 +19,6 @@ class App extends Component {
     return (
       <div>
         <Navbar />
-        <div className="wrapper">
-          <div className="sidebar-container">
-            <Sidebar />
-          </div>
-          <div className="main-container">
-            <Main />
-          </div>
-          <div className="sidebar-container">
-          </div>
-        </div>
         <Router>
           <Switch>
             <Route exact path="/" component={HomePage} />
