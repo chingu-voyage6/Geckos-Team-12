@@ -12,7 +12,7 @@ import truncateText from '../utils/truncateText';
 // UserProfileSnippet needs the answer's user ID passed to it as a prop
 const QuestionCard = (props) => (
     <div>
-        <h2>{props.question}</h2>
+        <h2>{props.questionText}</h2>
         <AnswerCard { ...props } />
     </div>
 );

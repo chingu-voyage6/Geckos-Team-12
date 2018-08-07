@@ -1,7 +1,9 @@
 import React from 'react';
+import { connect } from 'react-redux';
 
 import AnswerCard from './AnswerCard';
 import QuestionActionsWidget from './QuestionActionsWidget';
+
 
 // { match.params.questionId }
 
@@ -25,20 +27,22 @@ const sampleQuestionCards = [
 ]
 
 
-const QuestionPage = ({ match }) => (
+export const QuestionPage = (props) => (
     <div class="question-page-container">
         <div class="main-container card">
             <div class="question-display">
-                <h3>This is a sample question?</h3>
+                <h3>{ props.question.questionText }</h3>
                 <QuestionActionsWidget />
             </div>
 
-            <h3>X Answers</h3>
+            <h3>{props.answers.count} Answers</h3>
 
-            <AnswerCard
-                more={true}
-                { ...sampleQuestionCards[0] }
-            />
+            { props.answers.map( (answer) => (
+                <AnswerCard
+                    more={true}
+                    { ...answer }
+                />
+            )) }
         </div>
         <div>
             List of other questions goes here
@@ -46,4 +50,19 @@ const QuestionPage = ({ match }) => (
     </div>
 )
 
-export default QuestionPage;
+const mapStateToProps = (state, props) => {
+    return {
+        question: state.questions.find( (question) => question.id === props.match.params.questionId ),
+        answers: [
+            {
+                answerId: 500,
+                answerUserId: 200,
+                answerDate: "2018-07-01",
+                answerText: "This is a long string of text. This is a long string of text. This is a long string of text. This is a long string of text. This is a long string of text. This is a long string of text. This is a long string of text. This is a long string of text. This is a long string of text. This is a long string of text. This is a long string of text. This is a long string of text. This is a long string of text. This is a long string of text. This is a long string of text. This is a long string of text. This is a long string of text. This is a long string of text. This is a long string of text. This is a long string of text. This is a long string of text. This is a long string of text. "
+            }
+            
+        ]
+    }
+}
+
+export default connect(mapStateToProps)(QuestionPage);

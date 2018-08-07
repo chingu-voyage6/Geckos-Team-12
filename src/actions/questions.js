@@ -6,7 +6,7 @@ const uuidv1 = require('uuid/v1');
 export const addQuestion = (question) => ({
     type: 'ADD_QUESTION',
     question: {
-        id: uuidv1(),
+        uid: uuidv1(),
         ...question
     }
 });

@@ -11,9 +11,10 @@ import truncateText from '../utils/truncateText';
 
 class AnswerCard extends React.Component {
     state = {
-        more: this.props.more || false
+        more: this.props.more || false,
     }
-    truncatedAnswer = truncateText(this.props.answerText, 100);
+
+    truncatedAnswer = truncateText(this.props.answerText, 100)
 
     handleMoreToggle = () => {
         this.setState( () => ({
@@ -23,18 +24,18 @@ class AnswerCard extends React.Component {
 
     render() {
         // Destructures the props
-        const { questionId, 
-                question, 
-                answerId, 
+        const { questionUid, 
+                questionText, 
+                answerUid, 
                 answerUserId, 
                 answerDate, 
                 answerText } = this.props;
+        
+        console.log(answerText);
 
         return (
             <div>
                 <UserProfileSnippet />
-
-                { this.truncatedAnswer === answerText && this.handleMoreToggle() }
 
                 {
                     this.state.more
@@ -45,8 +46,8 @@ class AnswerCard extends React.Component {
                 }
 
 
-                { this.state.more && <AnswerActionsWidget answerId={answerId}/>}
-                { this.state.more && <CommentsWidget answerId={answerId}/>}
+                { this.state.more && <AnswerActionsWidget answerUid={answerUid}/>}
+                { this.state.more && <CommentsWidget answerUid={answerUid}/>}
             </div>
         );
     }

@@ -1,7 +1,7 @@
 import React from 'react';
 import FontAwesome from 'react-fontawesome';
 
-const AnswerActionsWidget = ({ answerId }) => (
+const AnswerActionsWidget = ({ answerUid }) => (
     <div class="wrapper space-between larger-text">
         <div>
             <FontAwesome name='arrow-circle-up' /> Upvote | <FontAwesome name='arrow-circle-down' /> Downvote

@@ -9,7 +9,9 @@ const placeholderOnSubmit = (e) => {
     alert('You submitted a comment!');
 }
 
-const CommentsWidget = ({ answerId }) => (
+// TODO: The Comment section currently uses "1===0" to force False.
+// When this component is wired up with comments, change that!
+const CommentsWidget = ({ answerUid }) => (
     <div>
         <div className="card">
         [YourUserProfilePic]

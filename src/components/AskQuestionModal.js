@@ -19,7 +19,7 @@ export class AskQuestionModal extends React.Component {
         this.toggle();
         this.props.addQuestion({
             questionText: this.state.questionText,
-            userId: 0
+            relatedUserId: 0
         });
         alert('You submitted your question!');
     }

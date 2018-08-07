@@ -2,6 +2,7 @@ import React from 'react';
 
 import AskQuestionModal from './AskQuestionModal';
 import QuestionCard from './QuestionCard'; 
+import { connect } from 'react-redux';
 
 const sampleQuestionCards = [
     {
@@ -22,21 +23,21 @@ const sampleQuestionCards = [
     }
 ]
 
-const Main = () => (
+export const Main = (props) => (
     <div className="main-wrapper">
         <div className="card">
             <AskQuestionModal />
         </div>
-        {sampleQuestionCards.length === 0
+        {props.questionsAndAnswers.length === 0
         ?
         ( <p>Your feed is empty. Ask a question!</p> )
         :
         (
-            sampleQuestionCards.map((answer) => (
+            props.questionsAndAnswers.map((qa) => (
                 <div className="card">
                 <QuestionCard 
-                    key={answer.answerId}
-                    {...answer}
+                    key={qa.topAnswerId}
+                    { ...qa }
                 />
                 </div>
             ))
@@ -45,4 +46,17 @@ const Main = () => (
     </div>
 );
 
-export default Main;
+const mapStateToProps = (state, props) => ({
+    questionsAndAnswers: [
+        {
+            questionUid: 123,
+            questionText: "Why is the sky blue?",
+            answerUid: 300,
+            answerText: "Because the green crayon was already used.",
+            answerUserId: 500,
+            answerDate: '2018-06-25'
+        }
+    ]
+});
+
+export default connect(mapStateToProps)(Main);
