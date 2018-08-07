@@ -5,7 +5,6 @@ export default (state = questionsReducerDefaultState, action) => {
         case 'ADD_QUESTION':
             return [
                 ...state,
-                action.id,
                 action.question
             ];
         case 'EDIT_QUESTION':

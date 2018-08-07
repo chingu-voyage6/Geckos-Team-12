@@ -12,11 +12,10 @@ import { addQuestion } from './actions/questions';
 
 const store = configureStore();
 
-store.dispatch(addQuestion, { 
-    uuid: 1,
+store.dispatch(addQuestion({ 
     questionText: "Is this a question?",
     userId: 500
-});
+}));
 
 const jsx = (
     <Provider store={store}>
