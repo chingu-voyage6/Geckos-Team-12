@@ -11,7 +11,7 @@ export default (state = questionsReducerDefaultState, action) => {
             return state.map((question) => {
                 if (question.id === action.id) {
                     return {
-                        question,
+                        ...question,
                         ...action.updates
                     };
                 }

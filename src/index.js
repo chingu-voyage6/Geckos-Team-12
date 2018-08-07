@@ -8,14 +8,9 @@ import 'mdbreact/dist/css/mdb.css';
 import './styles/index.css';
 import App from './App';
 import configureStore from './store/configureStore';
-import { addQuestion } from './actions/questions';
+import { addQuestion, editQuestion, removeQuestion } from './actions/questions';
 
 const store = configureStore();
-
-store.dispatch(addQuestion({ 
-    questionText: "Is this a question?",
-    userId: 500
-}));
 
 const jsx = (
     <Provider store={store}>
