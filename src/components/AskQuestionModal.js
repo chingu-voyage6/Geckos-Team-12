@@ -1,14 +1,27 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import { Container, Button, Modal, ModalBody, ModalHeader, ModalFooter } from 'mdbreact';
+import { addQuestion } from '../actions/questions';
 
-class AskQuestionModal extends React.Component {
+export class AskQuestionModal extends React.Component {
     state = {
-        modal: false
+        modal: false,
+        questionText: ''
     }
+    onQuestionTextChange = (e) => {
+        const questionText = e.target.value;
+        this.setState( () => ({
+            questionText
+        }));
+    };
     onSubmit = (e) => {
         e.preventDefault();
         this.toggle();
-        alert('You submitted a question!');
+        this.props.addQuestion({
+            questionText: this.state.questionText,
+            userId: 0
+        });
+        alert('You submitted your question!');
     }
     toggle = () => {
         this.setState( (prevState) => ({
@@ -23,7 +36,7 @@ class AskQuestionModal extends React.Component {
                     <ModalHeader toggle={this.toggle}>Ask Your Question</ModalHeader>
                     <ModalBody>
                         <form onSubmit={this.onSubmit}>
-                            <input type="text" placeholder="Ask your question" />
+                            <input name="questionText" type="text" placeholder="Ask your question" onChange={this.onQuestionTextChange} />
                             <Button type="submit">Ask!</Button>
                         </form>
                     </ModalBody>
@@ -33,4 +46,8 @@ class AskQuestionModal extends React.Component {
     }
 }
 
-export default AskQuestionModal;
+const mapDispatchToProps = (dispatch) => ({
+    addQuestion: (question) => dispatch(addQuestion(question))
+});
+
+export default connect(undefined, mapDispatchToProps)(AskQuestionModal);
