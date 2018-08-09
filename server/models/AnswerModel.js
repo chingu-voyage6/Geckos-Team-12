@@ -5,7 +5,8 @@ const answerSchema = new Schema({
     uid: String,
     answerText: String,
     relatedUserId: String,
-    relatedQuestionId: String
+    relatedQuestionId: String,
+    timestamp: Date
 });
 
 const Answer = mongoose.model('answer', answerSchema);

@@ -5,7 +5,8 @@ const userSchema = new Schema({
     uid: String,
     commentText: String,
     relatedUserId: String,
-    relatedAnswerId: String
+    relatedAnswerId: String,
+    timestamp: Date
 });
 
 const Comment = mongoose.model('comment', commentSchema);
