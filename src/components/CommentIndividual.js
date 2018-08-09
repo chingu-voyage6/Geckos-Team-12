@@ -1,16 +1,18 @@
 import React from 'react';
 
 import UserProfileSnippet from './UserProfileSnippet';
-
 import truncateText from '../utils/truncateText';
 
-const commentText = 'This is a comment. This is a longer string of text. This is a long string of text. This is a long string of text. This is a long string of text. This is a long string of text. This is a long string of text. This is a long string of text. This is a long string of text. This is a long string of text. This is a long string of text. This is a long string of text. This is a long string of text. This is a long string of text. This is a long string of text. This is a long string of text. This is a long string of text. This is a long string of text. This is a long string of text. This is a long string of text. This is a long string of text. This is a long string of text. This is a long string of text.'
 
 class CommentIndividual extends React.Component {
+
+    // TODO: I don't think this is actually truncating at 50 characters. Look into this...
+    truncatedCommentLength = 50;
+
     state = {
-        more: false
+        more: false,
+        truncatedComment: truncateText(this.props.comment.commentText, this.truncatedCommentLength)
     }
-    truncatedComment = truncateText(commentText, 50);
 
     handleMoreToggle = () => {
         this.setState( () => ({
@@ -19,18 +21,24 @@ class CommentIndividual extends React.Component {
     }
 
     render() {
+        const {
+            uid,
+            commentText,
+            relatedUserId,
+            relatedAnswerId,
+            timestamp
+         } = this.props.comment;
+
         return (
             <div>
                 <UserProfileSnippet />
 
-                { this.truncatedComment === commentText && this.handleMoreToggle() }
-
                 {
-                    this.state.more
+                    this.state.more || commentText.length <= this.truncatedCommentLength
                         ?
                     <p>{commentText}</p>
                         :
-                    <p>{ this.truncatedComment }... <a onClick={this.handleMoreToggle}>(read more)</a></p>
+                    <p>{ this.state.truncatedComment }... <a onClick={this.handleMoreToggle}>(read more)</a></p>
                 }
             </div>
         );
