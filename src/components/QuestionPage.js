@@ -52,7 +52,7 @@ export const QuestionPage = (props) => (
 
 const mapStateToProps = (state, props) => {
     return {
-        question: state.questions.find( (question) => question.id === props.match.params.questionId ),
+        question: state.questions.find( (question) => question.uid === props.match.params.questionId ),
         answers: [
             {
                 answerId: 500,

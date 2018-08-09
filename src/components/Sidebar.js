@@ -1,9 +1,26 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
 
-const Sidebar = () => (
+import selectQuestions from '../selectors/questionListByDate';
+
+export const Sidebar = (props) => (
     <div>
-        <h2>Sidebar Component</h2>
+        <h2>Recently Asked Questions</h2>
+        <ul>
+        { props.questions.map((question) => (
+            <li>
+                <Link to={`./${question.uid}`}>
+                    { question.questionText }
+                </Link>
+            </li>
+        )) }
+        </ul>
     </div>
 );
 
-export default Sidebar;
+const mapStateToProps = (state) => ({
+    questions: selectQuestions(state.questions)
+})
+
+export default connect(mapStateToProps)(Sidebar);
