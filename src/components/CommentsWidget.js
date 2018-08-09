@@ -1,40 +1,63 @@
 import React from 'react';
+import moment from 'moment';
+import { connect } from 'react-redux';
 import { Button } from 'mdbreact';
 
+import { addComment } from '../actions/comments';
 import CommentIndividual from './CommentIndividual';
 
-const placeholderOnSubmit = (e) => {
-    e.preventDefault();
-    e.target.elements.addcomment.value = '';
-    alert('You submitted a comment!');
+export class CommentsWidget extends React.Component {
+
+    handleSubmit = (e) => {
+        e.preventDefault();
+        this.props.addComment({
+            commentText: e.target.elements.addcomment.value,
+            relatedUserId: 0,
+            relatedAnswerId: this.props.answerId,
+            timestamp: moment()
+        });
+        e.target.elements.addcomment.value = '';
+        alert('You submitted a comment!');
+    }
+
+    render() {
+        return (
+            <div>
+                <div className="card">
+                [YourUserProfilePic]
+                    <form onSubmit={this.handleSubmit}>
+                        <input type="text" name="addcomment" placeholder="Add a comment" />
+                        <Button color="primary" type="submit">Comment</Button>
+                    </form>
+                </div>
+                <div>
+                    {   this.props.comments.length > 0
+                        ?
+                        (
+                            this.props.comments.map( (comment) => (
+                                <div className="card">
+                                    <CommentIndividual 
+                                        comment={comment}
+                                    />
+                                </div>
+                            ))
+                        )
+                        :
+                        ( <p>No comments on this answer. Add one!</p> )
+                    }
+                </div>
+            </div>
+        )
+    }
+
 }
 
-// TODO: The Comment section currently uses "1===0" to force False.
-// When this component is wired up with comments, change that!
-const CommentsWidget = ({ answerUid }) => (
-    <div>
-        <div className="card">
-        [YourUserProfilePic]
-            <form onSubmit={placeholderOnSubmit}>
-                <input type="text" name="addcomment" placeholder="Add a comment" />
-                <Button color="primary" type="submit">Comment</Button>
-            </form>
-        </div>
-        <div>
-            {1 === 0
-                ?
-                ( <p>No comments on this answer. Add one!</p> )
-                :
-                (
-                    <div className="card">
-                    <CommentIndividual 
+const mapStateToProps = (state, props) => ({
+    comments: state.comments.filter( (comment) => comment.relatedAnswerId === props.answerId )
+});
 
-                    />
-                    </div>
-                )
-            }
-        </div>
-    </div>
-);
+const mapDispatchToProps = (dispatch) => ({
+    addComment: (comment) => dispatch(addComment(comment))
+})
 
-export default CommentsWidget;
+export default connect(mapStateToProps, mapDispatchToProps)(CommentsWidget);

@@ -24,11 +24,10 @@ class AnswerCard extends React.Component {
 
     render() {
         // Destructures the props
-        const { questionUid, 
-                questionText, 
-                answerUid, 
-                answerUserId, 
-                answerDate, 
+        const { relatedQuestionId, 
+                uid, 
+                relatedUserId, 
+                timestamp, 
                 answerText } = this.props;
         
         console.log(answerText);
@@ -46,8 +45,8 @@ class AnswerCard extends React.Component {
                 }
 
 
-                { this.state.more && <AnswerActionsWidget answerUid={answerUid}/>}
-                { this.state.more && <CommentsWidget answerUid={answerUid}/>}
+                { this.state.more && <AnswerActionsWidget answerId={uid}/>}
+                { this.state.more && <CommentsWidget answerId={uid}/>}
             </div>
         );
     }
