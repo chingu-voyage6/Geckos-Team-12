@@ -9,7 +9,7 @@ export default (state = questionsReducerDefaultState, action) => {
             ];
         case 'EDIT_QUESTION':
             return state.map((question) => {
-                if (question.id === action.id) {
+                if (question.uid === action.id) {
                     return {
                         ...question,
                         ...action.updates
@@ -20,7 +20,7 @@ export default (state = questionsReducerDefaultState, action) => {
                 }
             });
         case 'REMOVE_QUESTION':
-            return state.filter( (question) => question.id !== action.id );
+            return state.filter( (question) => question.uid !== action.id );
         default:
             return state;
     }
