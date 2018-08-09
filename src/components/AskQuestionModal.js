@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { Container, Button, Modal, ModalBody, ModalHeader, ModalFooter } from 'mdbreact';
 import { addQuestion } from '../actions/questions';
+
 const moment = require('moment');
 
 export class AskQuestionModal extends React.Component {

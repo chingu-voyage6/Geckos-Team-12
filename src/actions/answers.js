@@ -1,11 +1,9 @@
 const uuidv1 = require('uuid/v1');
 
-// uid: uuidv1(),
-
 export const addAnswer = (answer) => ({
     type: 'ADD_ANSWER',
     answer: {
-        uid: '5',
+        uid: uuidv1(),
         ...answer
     }
 });
