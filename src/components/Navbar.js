@@ -30,11 +30,9 @@ class NavBar extends React.Component {
   render() {
     return (
           <Navbar color="transparent" light expand="md" scrolling>
-            <NavLink to="/" className="nav-brand">
-              <NavbarBrand className="nav-brand">
-                <strong>Quora</strong>
-              </NavbarBrand>
-            </NavLink>
+            <NavbarBrand className="nav-brand">
+              <strong>Quora</strong>
+            </NavbarBrand>
             {!this.state.isWideEnough && <NavbarToggler onClick={this.onClick} />}
             <Collapse isOpen={this.state.collapse} navbar>
               <NavbarNav left className="nav-items">
