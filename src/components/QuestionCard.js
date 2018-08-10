@@ -13,7 +13,7 @@ import truncateText from '../utils/truncateText';
 const QuestionCard = (props) => (
     <div>
         <h2>{props.questionText}</h2>
-        <AnswerCard { ...props } />
+        <AnswerCard { ...props.answer } />
     </div>
 );
 export default QuestionCard;

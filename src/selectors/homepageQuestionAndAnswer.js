@@ -9,17 +9,12 @@ export default (questions, answers) => {
                 return {
                     questionUid: question.uid,
                     questionText: question.questionText,
-                    answerUid: firstAnswer.uid,
-                    answerText: firstAnswer.answerText,
-                    answerUserId: firstAnswer.relatedUserId,
-                    answerTimestamp: firstAnswer.timestamp
+                    answer: firstAnswer
                 }
             }
             else {
-                return "No answers yet"
+                return undefined;
             }
         })
-        .filter( (question) => {
-            question !== "No answers yet"
-        });
+        .filter( (qa) => qa);
 }

@@ -18,7 +18,7 @@ export const Main = (props) => (
             props.questionsAndAnswers.map((qa) => (
                 <div className="card">
                 <QuestionCard 
-                    key={qa.topAnswerId}
+                    key={qa.answer.uid}
                     { ...qa }
                 />
                 </div>
