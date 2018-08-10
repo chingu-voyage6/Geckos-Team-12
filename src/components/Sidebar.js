@@ -9,7 +9,7 @@ export const Sidebar = (props) => (
         <h2>Recently Asked Questions</h2>
         <ul>
         { props.questions.map((question) => (
-            <li>
+            <li key={question.uid}>
                 <Link to={`./${question.uid}`}>
                     { question.questionText }
                 </Link>

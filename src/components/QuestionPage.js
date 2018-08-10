@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 
 import AnswerCard from './AnswerCard';
 import QuestionActionsWidget from './QuestionActionsWidget';
@@ -31,7 +32,7 @@ export const QuestionPage = (props) => (
             
         </div>
         <div>
-            List of other questions goes here
+            
         </div>
     </div>
 )
