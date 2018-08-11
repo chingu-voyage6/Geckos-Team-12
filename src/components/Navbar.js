@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { Navbar, NavbarBrand, NavbarNav, NavbarToggler, Collapse, NavItem, NavLink, Dropdown, DropdownToggle, DropdownMenu, DropdownItem, Button } from 'mdbreact';
-import { BrowserRouter as Router } from 'react-router-dom';
 import '../styles/nav.css';
 import Search from './Search';
 
@@ -30,9 +29,8 @@ class NavBar extends React.Component {
 
   render() {
     return (
-      <Router>
           <Navbar color="transparent" light expand="md" scrolling>
-            <NavbarBrand href="/" className="nav-brand">
+            <NavbarBrand className="nav-brand">
               <strong>Quora</strong>
             </NavbarBrand>
             {!this.state.isWideEnough && <NavbarToggler onClick={this.onClick} />}
@@ -58,7 +56,6 @@ class NavBar extends React.Component {
               </NavbarNav>
             </Collapse>
           </Navbar>
-      </Router>
     );
   }
 }

@@ -31,7 +31,9 @@ class CommentIndividual extends React.Component {
 
         return (
             <div>
-                <UserProfileSnippet />
+                <UserProfileSnippet 
+                    typeOfUserSubmission="Commented"
+                />
 
                 {
                     this.state.more || commentText.length <= this.truncatedCommentLength

@@ -34,7 +34,9 @@ class AnswerCard extends React.Component {
 
         return (
             <div>
-                <UserProfileSnippet />
+                <UserProfileSnippet 
+                    typeOfUserSubmission="Answered"
+                />
 
                 {
                     this.state.more
