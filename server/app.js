@@ -24,6 +24,9 @@ var routes = require('./routes/auth/login');
 
 var app = express();
 
+// view engine setup
+app.set('views', path.join(__dirname, 'views'));
+app.set('view engine', 'jade');
 
 app.use(logger('dev'));
 app.use(express.json());
@@ -35,7 +38,7 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 if (process.env.NODE_ENV === "production") {
-  app.use(express.static("../build"));
+  app.use(express.static(path.resolve(__dirname, '../build')));
 
     app.get('*', (req, res) => {
         res.sendFile(path.resolve(__dirname, '../build', 'index.html'));
