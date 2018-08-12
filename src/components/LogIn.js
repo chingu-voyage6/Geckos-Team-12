@@ -13,7 +13,7 @@ export default class LogIn extends React.Component {
                             <h5 className="text-center secondary-heading">A place to share knowledge and better understand the world</h5>
                             <div className="row">
                                 <div className="col buttons">
-                                    <Button color="danger" size="sm">Continue with Google</Button>
+                                    <Button color="danger" size="sm"><a href = "api/v1/auth/google">Continue with Google</a></Button>
                                     <Button color="success" size="sm">Continue with Facebook</Button>
                                     <Button color="link">Sign up</Button>
                                 </div>

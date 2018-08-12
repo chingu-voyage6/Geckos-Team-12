@@ -25,5 +25,15 @@
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
     "postinstall": "npm run build && npm install --prefix server"
-  }
+  },
+  "proxy":{
+    "/api/*":{
+      "target": "http://localhost:3001",
+      "secure":false
+    },
+    "/api/v1/*":{
+      "target": "http://localhost:3001",
+      "secure":false
+    }
+  } 
 }

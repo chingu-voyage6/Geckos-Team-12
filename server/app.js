@@ -5,6 +5,7 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
 const passportSetup = require('./config/passport-setup');
+const passport = require('passport');
 
 /*****************DB Connection********************** */
 const mongoose = require('mongoose');
@@ -32,11 +33,17 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 
+// initialize passport
+app.use(passport.initialize());
+app.use(passport.session());
 
-  app.use(express.static(path.resolve(__dirname,'../build')));
+if (process.env.NODE_ENV === "production") {
+  app.use(express.static("../build"));
+
   app.get("*", (req, res) => {
-    res.sendFile(path.resolve(__dirname,'../build','index.html'));
+    res.sendFile(path.resolve(__dirname,  "../build", "index.html"));
   });
+}
 
 //app.use(express.static(path.join(__dirname, '../build')));
 

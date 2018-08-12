@@ -14,7 +14,7 @@ router.get('/api/v1/auth/login',(req, res, next)=>{
 });
 
 //Callback route
-router.get('/auth/google/redirect',passport.authenticate('google',(req,res)=>{
-    res.send("Reached the callback URL");
-}));
+router.get('/auth/google/redirect',passport.authenticate('google'),(req,res)=>{
+   res.redirect('/');
+});
 module.exports = router;
