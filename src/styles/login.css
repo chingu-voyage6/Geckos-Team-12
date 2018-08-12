@@ -1,14 +1,41 @@
-.form-elegant .font-small {
-    font-size: 0.8rem;
+
+.header_box {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate( -50%, -50%);
+    text-align: center;
+    -webkit-box-shadow: 1px 4px 11px 2px rgba(107, 80, 107, 1);
+    -moz-box-shadow: 1px 4px 11px 2px rgba(107, 80, 107, 1);
+    box-shadow: 1px 4px 11px 2px rgba(107, 80, 107, 1);
+    border-radius: 5px;
 }
 
-.form-elegant .z-depth-1a {
-    -webkit-box-shadow: 0 2px 5px 0 rgba(55, 161, 255, 0.26), 0 4px 12px 0 rgba(121, 155, 254, 0.25);
-    box-shadow: 0 2px 5px 0 rgba(55, 161, 255, 0.26), 0 4px 12px 0 rgba(121, 155, 254, 0.25);
+.login_box {
+    padding: 20px;
 }
 
-.form-elegant .z-depth-1-half,
-.form-elegant .btn:hover {
-    -webkit-box-shadow: 0 5px 11px 0 rgba(85, 182, 255, 0.28), 0 4px 15px 0 rgba(36, 133, 255, 0.15);
-    box-shadow: 0 5px 11px 0 rgba(85, 182, 255, 0.28), 0 4px 15px 0 rgba(36, 133, 255, 0.15);
+.heading {
+    font-weight: bolder;
+}
+
+.secondary-heading {}
+
+.buttons {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.forms {
+    margin: 20px;
+}
+
+.forms p {
+    text-align: left;
+    font-weight: 300;
+}
+
+.forms input {
+    font-size: 15px;
 }
