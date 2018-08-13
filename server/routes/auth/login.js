@@ -4,12 +4,12 @@ const passport = require("passport");
 
 
 /* Authentication with any provider*/
-router.get('/api/v1/auth/google', passport.authenticate('google',{
+router.get('/auth/google', passport.authenticate('google',{
     scope:['profile']
 }));
 
 //User login
-router.get('/api/v1/auth/login',(req, res, next)=>{
+router.get('/auth/login',(req, res, next)=>{
   res.send("login route");
 });
 

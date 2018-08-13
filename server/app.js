@@ -48,7 +48,7 @@ if (process.env.NODE_ENV === "production") {
 //app.use(express.static(path.join(__dirname, '../build')));
 
 //Using all routes defined
-app.use(routes);
+app.use("/api/v1/",routes);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
